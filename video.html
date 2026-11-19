@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avox Consultancy | 30-Second Intro</title>
+  <meta name="description" content="Watch how Avox Consultancy helps Saudi logistics and supply chain businesses, in 30 seconds.">
+  <link rel="icon" href="assets/avox-logo.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .stage-wrap { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .stage {
+      position: relative; width: 100%; max-width: 960px; aspect-ratio: 16 / 9;
+      background: var(--blue); overflow: hidden; border-radius: 6px; border-top: 6px solid var(--red);
+    }
+    .stage.vertical { max-width: 360px; aspect-ratio: 9 / 16; }
+    .scene { position: absolute; inset: 0; opacity: 0; transition: opacity 0.6s ease; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+    .scene.active { opacity: 1; }
+    .anim { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .scene.active .anim { opacity: 1; transform: none; }
+    .scene h2 { color: #fff; font-size: clamp(1.4rem, 3.5vw, 2.4rem); margin-bottom: 12px; }
+    .scene p { margin: 0; font-size: clamp(0.95rem, 2vw, 1.15rem); opacity: 0.9; }
+    .scene svg { width: min(520px, 80%); height: auto; }
+    .slide-left { transform: translateX(-160px) !important; }
+    .scene.active .slide-left { transform: none !important; }
+    .path-dot { transition: transform 3.5s linear; }
+    .scene.active .path-dot { transform: translateX(320px); }
+    .bar { transition: height 1.2s ease; }
+    .controls { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .progress { width: 100%; max-width: 960px; height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; }
+    .progress span { display: block; height: 100%; width: 0; background: var(--red); }
+    .note { font-size: 0.9rem; color: var(--muted); text-align: center; max-width: 720px; }
+  </style>
+</head>
+<body id="top">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand"><img src="assets/avox-logo.svg" alt="Avox Consultancy" width="150" height="40"></a>
+      <nav aria-label="Main">
+        <a href="index.html#services">Services</a>
+        <a href="industries.html">Industries</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="tools.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="index.html#contact" class="btn btn-small">Request a Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" style="padding-bottom:40px">
+      <div class="container">
+        <p class="eyebrow">Intro video</p>
+        <h1>Avox in 30 seconds</h1>
+        <p class="lead">See how we help logistics and supply chain businesses move from receiving to last-mile delivery, with clear, data-driven plans.</p>
+      </div>
+    </section>
+
+    <section class="section alt" style="padding-top:40px">
+      <div class="container stage-wrap">
+        <div class="controls">
+          <button class="btn" id="play">Play</button>
+          <button class="btn btn-outline" id="replay">Replay</button>
+          <button class="btn btn-outline" id="sound">Sound: On</button>
+          <button class="btn btn-outline" id="format">Switch to vertical (9:16)</button>
+        </div>
+
+        <div class="stage" id="stage">
+
+          <!-- 1: Logo -->
+          <section class="scene" data-scene>
+            <img class="anim" src="assets/avox-logo.svg" alt="Avox Consultancy" style="width:min(420px,70%);background:#fff;padding:18px;border-radius:6px">
+            <p class="anim" style="margin-top:20px">Avox Consultancy</p>
+          </section>
+
+          <!-- 2: Receiving -->
+          <section class="scene" data-scene>
+            <svg class="anim" viewBox="0 0 520 220" aria-hidden="true">
+              <rect x="0" y="170" width="520" height="8" fill="#fff" opacity="0.4"/>
+              <g class="slide-left"><rect x="40" y="100" width="150" height="70" fill="#A3262A"/><rect x="200" y="100" width="150" height="70" fill="#C9B8A6"/></g>
+            </svg>
+            <h2 class="anim">1. Receiving</h2>
+            <p class="anim">Goods are checked in against the purchase order, with no delays at the dock.</p>
+          </section>
+
+          <!-- 3: Storage -->
+          <section class="scene" data-scene>
+            <svg class="anim" viewBox="0 0 520 220" aria-hidden="true">
+              <g fill="#fff" opacity="0.35"><rect x="60" y="40" width="6" height="140"/><rect x="200" y="40" width="6" height="140"/><rect x="340" y="40" width="6" height="140"/><rect x="460" y="40" width="6" height="140"/></g>
+              <g fill="#A3262A"><rect x="80" y="130" width="100" height="40"/><rect x="220" y="130" width="100" height="40"/><rect x="360" y="130" width="90" height="40"/><rect x="100" y="80" width="80" height="40"/><rect x="240" y="80" width="80" height="40"/></g>
+            </svg>
+            <h2 class="anim">2. Storage</h2>
+            <p class="anim">Every pallet has a known location, so stock is accurate and easy to find.</p>
+          </section>
+
+          <!-- 4: Picking -->
+          <section class="scene" data-scene>
+            <svg class="anim" viewBox="0 0 520 220" aria-hidden="true">
+              <path d="M40 150 H360" stroke="#fff" stroke-width="3" stroke-dasharray="8 8" opacity="0.5" fill="none"/>
+              <circle class="path-dot" cx="40" cy="150" r="14" fill="#A3262A"/>
+              <rect x="380" y="120" width="90" height="60" fill="#C9B8A6"/>
+            </svg>
+            <h2 class="anim">3. Picking</h2>
+            <p class="anim">Short, planned pick paths cut walking time and errors.</p>
+          </section>
+
+          <!-- 5: Transport -->
+          <section class="scene" data-scene>
+            <svg class="anim" viewBox="0 0 520 220" aria-hidden="true">
+              <rect x="0" y="180" width="520" height="6" fill="#fff" opacity="0.4"/>
+              <g class="slide-left"><rect x="120" y="100" width="170" height="80" rx="4" fill="#A3262A"/><rect x="290" y="120" width="70" height="60" fill="#A3262A"/><circle cx="160" cy="184" r="14" fill="#2E2A27"/><circle cx="330" cy="184" r="14" fill="#2E2A27"/></g>
+            </svg>
+            <h2 class="anim">4. Transport</h2>
+            <p class="anim">Routes and loads are planned to reduce empty kilometres and cost.</p>
+          </section>
+
+          <!-- 6: Last mile -->
+          <section class="scene" data-scene>
+            <svg class="anim" viewBox="0 0 520 220" aria-hidden="true">
+              <path d="M60 170 H460" stroke="#fff" stroke-width="3" opacity="0.4"/>
+              <path d="M400 80 L440 60 L480 80 V130 H400 Z" fill="#C9B8A6"/>
+              <path d="M400 80 L440 60 L480 80" fill="none" stroke="#A3262A" stroke-width="6"/>
+              <rect x="60" y="120" width="80" height="50" fill="#A3262A" class="slide-left"/>
+            </svg>
+            <h2 class="anim">5. Last-mile delivery</h2>
+            <p class="anim">Time windows and proof of delivery keep customers informed and first attempts successful.</p>
+          </section>
+
+          <!-- 7: AI insights -->
+          <section class="scene" data-scene>
+            <svg class="anim" viewBox="0 0 520 220" aria-hidden="true">
+              <rect x="60" y="30" width="400" height="160" rx="6" fill="#FFFFFF" opacity="0.08"/>
+              <rect x="110" y="130" width="50" height="40" fill="#C9B8A6" class="bar" style="height:40px"/>
+              <rect x="190" y="110" width="50" height="60" fill="#C9B8A6"/>
+              <rect x="270" y="80" width="50" height="90" fill="#C9B8A6"/>
+              <rect x="350" y="50" width="50" height="120" fill="#A3262A"/>
+            </svg>
+            <h2 class="anim">6. AI-driven insight</h2>
+            <p class="anim">Our analysis spots the problems early, so your team acts on facts, not guesses.</p>
+          </section>
+
+          <!-- 8: End card -->
+          <section class="scene" data-scene>
+            <img class="anim" src="assets/avox-logo.svg" alt="Avox Consultancy" style="width:min(380px,70%);background:#fff;padding:16px;border-radius:6px">
+            <h2 class="anim" style="margin-top:20px">Smarter Supply, Stronger Growth.</h2>
+            <p class="anim">Request a consultation through our website</p>
+          </section>
+
+        </div>
+
+        <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+        <p class="note">The voiceover uses the built-in voice on your device and plays the background music generated in your browser. Voice quality depends on your device. For a more natural voice, we can add a recorded narration file later.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <img src="assets/avox-logo.svg" alt="Avox Consultancy">
+        <div>Avox Consultancy &middot; Based in Hungary</div>
+        <div>&copy; 2026 Avox Consultancy. All rights reserved.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#services">Services</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="tools.html">Tools</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="legal.html">Privacy and Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/966558089615" target="_blank" rel="noopener">WhatsApp us</a>
+
+  <script>
+    const scenes = Array.from(document.querySelectorAll('[data-scene]'));
+    const stage = document.getElementById('stage');
+    const bar = document.getElementById('bar');
+    const SCENE_MS = 3750;
+
+    // Voiceover lines, one per scene, in order.
+    const LINES = [
+      'Avox Consultancy. Smarter supply, stronger growth.',
+      'Receiving: goods are checked in against the order.',
+      'Storage: every pallet has a known location.',
+      'Picking: planned routes cut walking and errors.',
+      'Transport: loads and routes are planned to cut cost.',
+      'Last mile: time windows keep customers informed.',
+      'AI insight: problems are spotted early, so you act on facts.',
+      'Smarter supply, stronger growth. Request a consultation today.'
+    ];
+
+    let timers = [];
+    let start = 0;
+    let soundOn = true;
+
+    // Built-in browser voice, preferring a British English female voice when the device has one.
+    function pickVoice() {
+      const vs = window.speechSynthesis ? speechSynthesis.getVoices() : [];
+      return vs.find(v => /en-GB/i.test(v.lang) && /female|libby|sonia|hazel|susan|serena/i.test(v.name))
+        || vs.find(v => /en-GB/i.test(v.lang))
+        || vs.find(v => /^en/i.test(v.lang));
+    }
+
+    let currentAudio = null;
+
+    function say(i) {
+      const text = LINES[i];
+      const a = new Audio('assets/vo/scene' + (i + 1) + '.mp3');
+      currentAudio = a;
+      let usedFallback = false;
+      const fallback = () => { if (!usedFallback) { usedFallback = true; speakFallback(text); } };
+      a.addEventListener('error', fallback);
+      a.play().catch(fallback);
+    }
+
+    function speakFallback(text) {
+      if (!('speechSynthesis' in window)) return;
+      const u = new SpeechSynthesisUtterance(text);
+      const v = pickVoice();
+      if (v) u.voice = v;
+      u.lang = 'en-GB';
+      u.rate = 0.95;
+      speechSynthesis.speak(u);
+    }
+
+    // Soft synthesized background music (no copyright issues, generated in the browser).
+    let ctx = null, musicTimer = null, chordIdx = 0;
+    const CHORDS = [[261.6, 329.6, 392], [220, 261.6, 329.6], [174.6, 220, 261.6], [196, 246.9, 293.7]];
+
+    function tone(f, t, dur, vol, type) {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = type; o.frequency.value = f;
+      g.gain.setValueAtTime(0, t);
+      g.gain.linearRampToValueAtTime(vol, t + Math.min(1.5, dur / 4));
+      g.gain.linearRampToValueAtTime(0, t + dur);
+      o.connect(g).connect(ctx.destination);
+      o.start(t); o.stop(t + dur);
+    }
+
+    function playChord() {
+      const t = ctx.currentTime, dur = 7.5, c = CHORDS[chordIdx];
+      c.forEach(f => tone(f, t, dur, 0.03, 'triangle'));          // pad
+      tone(c[0] / 2, t, dur, 0.05, 'sine');                        // bass
+      for (let k = 0; k < 8; k++) {                                // arpeggio
+        tone(c[k % 3] * 2, t + k * 0.9375, 0.9, 0.022, 'sine');
+      }
+      chordIdx = (chordIdx + 1) % CHORDS.length;
+    }
+
+    function startMusic() {
+      stopMusic();
+      try {
+        ctx = new (window.AudioContext || window.webkitAudioContext)();
+        chordIdx = 0;
+        playChord();
+        musicTimer = setInterval(playChord, 7500);
+      } catch (e) { ctx = null; }
+    }
+
+    function stopMusic() {
+      clearInterval(musicTimer);
+      if (ctx) { ctx.close(); ctx = null; }
+    }
+
+    function stopAll() {
+      timers.forEach(clearTimeout); timers = [];
+      if ('speechSynthesis' in window) speechSynthesis.cancel();
+      if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+      stopMusic();
+    }
+
+    function play(withSound) {
+      stopAll();
+      scenes.forEach(s => s.classList.remove('active'));
+      start = Date.now();
+      scenes.forEach((s, i) => {
+        timers.push(setTimeout(() => {
+          scenes.forEach(x => x.classList.remove('active'));
+          s.classList.add('active');
+          if (withSound && soundOn) say(i);
+        }, i * SCENE_MS));
+      });
+      timers.push(setTimeout(() => scenes.forEach(x => x.classList.remove('active')), scenes.length * SCENE_MS));
+      if (withSound && soundOn) startMusic();
+      tick();
+    }
+
+    function tick() {
+      const pct = Math.min(100, ((Date.now() - start) / (scenes.length * SCENE_MS)) * 100);
+      bar.style.width = pct + '%';
+      if (pct < 100) requestAnimationFrame(tick);
+    }
+
+    document.getElementById('play').addEventListener('click', () => play(true));
+    document.getElementById('replay').addEventListener('click', () => play(true));
+    document.getElementById('format').addEventListener('click', function () {
+      const vertical = stage.classList.toggle('vertical');
+      this.textContent = vertical ? 'Switch to horizontal (16:9)' : 'Switch to vertical (9:16)';
+    });
+    document.getElementById('sound').addEventListener('click', function () {
+      soundOn = !soundOn;
+      this.textContent = soundOn ? 'Sound: On' : 'Sound: Off';
+      if (!soundOn) stopMusic(); else if (start) startMusic();
+      if (!soundOn && 'speechSynthesis' in window) speechSynthesis.cancel();
+    });
+
+    // Show the first frame silently; sound starts only after a click (browser rule).
+    play(false);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Careers | Avox Consultancy</title>
+  <meta name="description" content="Careers at Avox Consultancy: join our logistics, warehousing, and supply chain team.">
+  <link rel="icon" href="assets/avox-logo.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .roles { display: grid; gap: 18px; margin-top: 32px; }
+    .role { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .role p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .apply-form { max-width: 720px; margin-top: 40px; }
+    .apply-form input, .apply-form select, .apply-form textarea { padding: 12px; font: inherit; }
+    @media (max-width: 600px) { .apply-form .form-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body id="top">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand"><img src="assets/avox-logo.svg" alt="Avox Consultancy" width="150" height="40"></a>
+      <nav aria-label="Main">
+        <a href="index.html#services">Services</a>
+        <a href="industries.html">Industries</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="tools.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="careers.html" aria-current="page">Careers</a>
+        <a href="index.html#contact" class="btn btn-small">Request a Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" style="padding-bottom:40px">
+      <div class="container">
+        <p class="eyebrow">Careers</p>
+        <h1>Build the future of Saudi supply chains with us</h1>
+        <p class="lead">We are a young consultancy looking for people who enjoy solving practical problems in warehouses, on the road, and in planning rooms.</p>
+      </div>
+    </section>
+
+    <section class="section alt" style="padding-top:40px">
+      <div class="container">
+        <h2>Open roles</h2>
+        <div class="roles">
+          <article class="card role">
+            <div><h3>Logistics Consultant</h3><p>Full-time &middot; Saudi Arabia &middot; Details to be confirmed</p></div>
+            <a class="btn btn-outline" href="#apply">Apply</a>
+          </article>
+          <article class="card role">
+            <div><h3>Warehouse Operations Analyst</h3><p>Full-time &middot; Saudi Arabia &middot; Details to be confirmed</p></div>
+            <a class="btn btn-outline" href="#apply">Apply</a>
+          </article>
+          <article class="card role">
+            <div><h3>Supply Chain Planner</h3><p>Full-time &middot; Saudi Arabia &middot; Details to be confirmed</p></div>
+            <a class="btn btn-outline" href="#apply">Apply</a>
+          </article>
+          <article class="card role">
+            <div><h3>Transport Optimization Specialist</h3><p>Full-time &middot; Saudi Arabia &middot; Details to be confirmed</p></div>
+            <a class="btn btn-outline" href="#apply">Apply</a>
+          </article>
+        </div>
+        <p class="section-intro" style="margin-top:24px">Don't see your role? Send us your details anyway. We keep applications on file for future openings.</p>
+      </div>
+    </section>
+
+    <section class="section" id="apply">
+      <div class="container">
+        <p class="eyebrow">Apply</p>
+        <h2>Submit your application</h2>
+        <form class="card apply-form" id="apply-form" action="#" method="post" novalidate>
+          <div class="form-grid">
+            <div><label for="a-name">Full name</label><input id="a-name" name="name" type="text" required></div>
+            <div><label for="a-email">Email</label><input id="a-email" name="email" type="email" required></div>
+            <div><label for="a-phone">Phone</label><input id="a-phone" name="phone" type="tel" placeholder="+966 5X XXX XXXX"></div>
+            <div><label for="a-role">Role you are applying for</label>
+              <select id="a-role" name="role">
+                <option>Logistics Consultant</option>
+                <option>Warehouse Operations Analyst</option>
+                <option>Supply Chain Planner</option>
+                <option>Transport Optimization Specialist</option>
+                <option>Other or general application</option>
+              </select>
+            </div>
+            <div class="full"><label for="a-years">Years of experience</label><input id="a-years" name="years" type="number" min="0"></div>
+            <div class="full"><label for="a-message">Tell us about your experience</label><textarea id="a-message" name="message"></textarea></div>
+            <div class="full"><label for="a-cv">Link to your CV (Google Drive, Dropbox, or LinkedIn)</label><input id="a-cv" name="cv" type="url" placeholder="https://"></div>
+            <div class="full consent">
+              <input id="a-consent" name="consent" type="checkbox" required>
+              <label for="a-consent" style="font-weight:400;margin:0">I agree that Avox may store my application details for recruitment purposes, in line with the privacy policy.</label>
+            </div>
+            <div class="full"><button class="btn" type="submit">Submit application</button></div>
+          </div>
+          <p class="form-status" id="apply-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <img src="assets/avox-logo.svg" alt="Avox Consultancy">
+        <div>Avox Consultancy &middot; Based in Hungary</div>
+        <div>&copy; 2026 Avox Consultancy. All rights reserved.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#services">Services</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="tools.html">Tools</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="legal.html">Privacy and Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/966558089615" target="_blank" rel="noopener">WhatsApp us</a>
+
+  <script>
+    // Placeholder handler: applications are not yet sent anywhere.
+    document.getElementById('apply-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const status = document.getElementById('apply-status');
+      if (!this.checkValidity()) { status.textContent = 'Please complete the required fields.'; return; }
+      status.textContent = 'Thank you. Your application has been received.';
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

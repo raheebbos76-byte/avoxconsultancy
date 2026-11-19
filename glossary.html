@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supply Chain Glossary | Avox Consultancy</title>
+  <meta name="description" content="A searchable glossary of supply chain, warehousing, transport, and logistics terms from Avox Consultancy.">
+  <link rel="icon" href="assets/avox-logo.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .term { padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .term h3 { margin-bottom: 6px; font-size: 1.1rem; }
+    .term p { margin: 0; color: var(--muted); }
+    .letter { font-family: "IBM Plex Serif", Georgia, serif; color: var(--red); font-size: 1.6rem; margin: 36px 0 4px; }
+    .g-search { margin-top: 24px; max-width: 480px; }
+    .g-search input { padding: 14px; font-size: 1rem; }
+  </style>
+</head>
+<body id="top">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand"><img src="assets/avox-logo.svg" alt="Avox Consultancy" width="150" height="40"></a>
+      <nav aria-label="Main">
+        <a href="index.html#services">Services</a>
+        <a href="industries.html">Industries</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="tools.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="index.html#contact" class="btn btn-small">Request a Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" style="padding-bottom:40px">
+      <div class="container">
+        <p class="eyebrow">Glossary</p>
+        <h1>Supply chain terms, explained simply</h1>
+        <p class="lead">A reference for the words your team hears every day in warehouses, transport, and planning meetings.</p>
+        <div class="g-search">
+          <label for="q">Search terms</label>
+          <input id="q" type="search" placeholder="Search a term, for example: FEFO" autocomplete="off">
+        </div>
+        <p class="count" id="count" role="status"></p>
+      </div>
+    </section>
+
+    <section class="section alt" style="padding-top:20px">
+      <div class="container" id="list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <img src="assets/avox-logo.svg" alt="Avox Consultancy">
+        <div>Avox Consultancy &middot; Based in Hungary</div>
+        <div>&copy; 2026 Avox Consultancy. All rights reserved.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#services">Services</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="tools.html">Tools</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="legal.html">Privacy and Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/966558089615" target="_blank" rel="noopener">WhatsApp us</a>
+
+  <script>
+    const TERMS = [
+      ['5S', 'A workplace method using five steps (sort, set in order, shine, standardize, sustain) to keep work areas organized.'],
+      ['3PL (third-party logistics)', 'A company that runs warehousing or transport for other businesses under contract.'],
+      ['4PL (fourth-party logistics)', 'A provider that manages and coordinates other logistics providers on a client\'s behalf.'],
+      ['ABC analysis', 'Ranking items by value or volume, so that the most important items get the most control.'],
+      ['Backhaul', 'A load picked up on the return journey, so that a truck does not drive back empty.'],
+      ['Bill of lading', 'A document issued by a carrier that confirms receipt of goods and the terms of their shipment.'],
+      ['Bullwhip effect', 'Small changes in customer demand grow larger at each step upstream, causing swings in orders and stock.'],
+      ['Cold chain', 'The temperature-controlled path that keeps perishable or pharmaceutical goods within safe limits.'],
+      ['Container yard', 'An area where shipping containers are stored, stacked, and moved between trucks, rail, and vessels.'],
+      ['Cross-docking', 'Moving goods straight from receiving to dispatch with little or no storage in between.'],
+      ['Cycle counting', 'Counting a small part of the stock on a regular schedule, rather than shutting down for a full stock count.'],
+      ['Demurrage', 'A charge for keeping a container at a port or terminal beyond the agreed free time.'],
+      ['Detention', 'A charge for keeping a container or trailer outside the yard beyond the agreed free time.'],
+      ['Empty mile', 'Distance a vehicle travels without a load. Reducing it lowers cost and emissions.'],
+      ['FEFO (first expired, first out)', 'A picking rule that ships the items with the earliest expiry date first. Common for pharma and food.'],
+      ['FIFO (first in, first out)', 'A picking rule that ships the oldest stock first.'],
+      ['Fill rate', 'The percentage of customer demand that is delivered from available stock on the first order.'],
+      ['Freight forwarding', 'Arranging the shipment of goods between countries, including booking, documents, and customs.'],
+      ['Incoterms', 'Standard international trade terms that define who pays for and bears risk on goods at each stage of shipping.'],
+      ['Inventory turnover', 'How many times stock is sold and replaced in a period. Higher turnover usually means less cash tied up in stock.'],
+      ['Last-mile delivery', 'The final step of delivery from a local hub to the customer\'s door.'],
+      ['Lead time', 'The time from placing an order to receiving the goods.'],
+      ['Lean management', 'An approach that removes waste from processes, such as waiting, extra movement, and rework.'],
+      ['OTIF (on time, in full)', 'A measure of whether an order arrives both on the promised day and with every item included.'],
+      ['Pick path', 'The route a picker walks through a warehouse to collect items for an order.'],
+      ['Proof of delivery (POD)', 'Evidence that goods were received, such as a signature, photo, or electronic confirmation.'],
+      ['Reorder point', 'The stock level at which a new order should be placed so that stock does not run out before replenishment.'],
+      ['Safety stock', 'Extra stock held to protect against unexpected demand or late supplier deliveries.'],
+      ['S&OP (sales and operations planning)', 'A monthly process that aligns sales forecasts, operations capacity, and financial plans.'],
+      ['Slotting', 'Deciding where each product is stored in a warehouse, usually placing fast movers closest to dispatch.'],
+      ['TMS (transport management system)', 'Software that plans, executes, and tracks transport movements.'],
+      ['Value stream mapping', 'Drawing the steps of a process to find where time and effort are wasted.'],
+      ['WMS (warehouse management system)', 'Software that controls stock locations, picking, receiving, and dispatch inside a warehouse.']
+    ];
+
+    const list = document.getElementById('list');
+    const count = document.getElementById('count');
+    const input = document.getElementById('q');
+
+    function render() {
+      const q = input.value.trim().toLowerCase();
+      const filtered = TERMS.filter(t => (t[0] + ' ' + t[1]).toLowerCase().includes(q));
+      let html = '';
+      let lastLetter = '';
+      filtered.forEach(function (t) {
+        const letter = t[0].charAt(0).toUpperCase();
+        if (letter !== lastLetter) { html += '<div class="letter">' + letter + '</div>'; lastLetter = letter; }
+        html += '<div class="term"><h3>' + t[0] + '</h3><p>' + t[1] + '</p></div>';
+      });
+      list.innerHTML = html || '<p class="empty" style="display:block">No terms match your search.</p>';
+      count.textContent = 'Showing ' + filtered.length + ' of ' + TERMS.length + ' terms';
+    }
+
+    input.addEventListener('input', render);
+    render();
+  </script>
+
+</body>
+</html>

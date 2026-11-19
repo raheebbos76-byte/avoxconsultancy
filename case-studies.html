@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case Studies | Avox Consultancy</title>
+  <meta name="description" content="32 illustrative logistics, warehousing, and supply chain scenarios from Saudi Arabia, with before-and-after results.">
+  <link rel="icon" href="assets/avox-logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .bar-row { grid-template-columns: 56px 1fr 84px; }
+    .tag {
+      display: inline-block; margin-left: 6px; padding: 4px 10px; border-radius: 999px;
+      background: var(--bg); border: 1px solid var(--line); color: var(--muted); font-size: 0.72rem;
+    }
+    .search-wrap { margin: 32px 0 8px; max-width: 560px; }
+    .search-wrap input { font-size: 1rem; padding: 14px; }
+    .count { color: var(--muted); font-size: 0.9rem; margin: 10px 0 0; }
+    .empty { color: var(--muted); display: none; margin-top: 24px; }
+    .case-grid { margin-top: 24px; }
+    .case-grid .card { padding: 24px; }
+  </style>
+</head>
+<body id="top">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand"><img src="assets/avox-logo.svg" alt="Avox Consultancy" width="150" height="40"></a>
+      <nav aria-label="Main">
+        <a href="index.html#services">Services</a>
+        <a href="industries.html">Industries</a>
+        <a href="case-studies.html" aria-current="page">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="tools.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="index.html#contact" class="btn btn-small">Request a Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" style="padding-bottom:40px">
+      <div class="container">
+        <p class="eyebrow">Case studies</p>
+        <h1>32 illustrative scenarios from Saudi logistics</h1>
+        <p class="lead">Each scenario shows a typical problem in Saudi logistics, the Avox approach, and representative before-and-after results. Client names are withheld under confidentiality. These are illustrative, not verified reports of specific client engagements.</p>
+        <div class="search-wrap">
+          <label for="q" class="sr-only">Search case studies</label>
+          <input id="q" type="search" placeholder="Search by industry, problem, or tool" autocomplete="off">
+        </div>
+        <p class="count" id="count" role="status"></p>
+      </div>
+    </section>
+
+    <section class="section alt" style="padding-top:40px">
+      <div class="container">
+        <div class="cards three case-grid" id="grid"></div>
+        <p class="empty" id="empty">No case studies match your search. Try a different word.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <img src="assets/avox-logo.svg" alt="Avox Consultancy">
+        <div>Avox Consultancy &middot; Based in Hungary</div>
+        <div>&copy; 2026 Avox Consultancy. All rights reserved.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#services">Services</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="tools.html">Tools</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="legal.html">Privacy and Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/966558089615" target="_blank" rel="noopener">WhatsApp us</a>
+
+  <script>
+    const CASES = [
+      { t: 'Cycle counting for a retail chain', i: 'Retail', c: 'a Saudi retail chain with 40 stores', p: 'Stock counts did not match shelves, causing frequent stockouts and wasted staff time.', s: 'Avox segmented SKUs by value (ABC), introduced cycle counting, and reset reorder points.', k: 'WMS, ABC analysis, cycle count schedule', w: '16 weeks', m: [['Inventory accuracy', 82, 98, '%'], ['Stockouts', 14, 4, '%']] },
+      { t: 'Temperature control for pharmaceutical storage', i: 'Pharma', c: 'a regional pharmaceutical distributor', p: 'Frequent temperature excursions in storage zones and rising expiry write-offs.', s: 'Avox mapped storage zones, set monitoring checkpoints, and enforced first-expired, first-out picking.', k: 'Temperature loggers, FEFO rules, zone mapping', w: '20 weeks', m: [['Temperature excursions per quarter', 11, 2, ''], ['Expiry write-offs', 3.1, 0.8, '% of stock value']] },
+      { t: 'On-time reliability for cold-chain transport', i: 'Cold storage', c: 'a temperature-controlled logistics provider', p: 'Late deliveries and cold-chain breaches on regional routes.', s: 'Avox re-sequenced routes, added temperature checkpoints, and set dispatch cut-off rules.', k: 'Route sequencing, temperature monitoring, dispatch rules', w: '14 weeks', m: [['On-time deliveries', 78, 96, '%'], ['Cold-chain breaches per month', 9, 1, '']] },
+      { t: 'Faster last-mile for an FMCG distributor', i: 'FMCG', c: 'an FMCG distributor serving urban outlets', p: 'Slow delivery windows and high cost per drop.', s: 'Avox introduced zone-based dispatch, load planning, and proof-of-delivery tracking.', k: 'Zone planning, load plans, e-POD app', w: '12 weeks', m: [['Average delivery time', 48, 24, ' hrs'], ['Cost per delivery (index)', 100, 78, '']] },
+      { t: 'Slotting and picking redesign for a 3PL warehouse', i: 'Warehouse', c: 'a third-party logistics warehouse', p: 'Pickers walked long distances, and productivity was below target.', s: 'Avox reslotted fast movers near dispatch and redesigned pick paths.', k: 'ABC slotting, pick-path design, labor standards', w: '10 weeks', m: [['Picks per labor hour', 60, 88, ''], ['Pick path length (index)', 100, 70, '']] },
+      { t: 'Demand planning for a food manufacturer', i: 'Supply chain', c: 'a Saudi food manufacturer', p: 'Forecasts missed demand swings, causing excess safety stock and late production changes.', s: 'Avox built a monthly demand review and improved forecast models with sales input.', k: 'Demand planning models, S&OP reviews', w: '18 weeks', m: [['Forecast accuracy', 65, 85, '%'], ['Safety stock value (index)', 100, 82, '']] },
+      { t: 'Booking and documentation for a freight forwarder', i: 'Freight forwarding', c: 'a freight forwarder operating at a Gulf port', p: 'Slow booking confirmations and frequent documentation errors.', s: 'Avox standardized booking steps and added a document checklist for every shipment.', k: 'Booking workflow, document checklist, TMS', w: '8 weeks', m: [['Booking lead time', 3, 1, ' days'], ['Documentation errors per 100 shipments', 12, 2, '']] },
+      { t: 'Turnaround time for a container yard', i: 'Container yard', c: 'a container yard operator on the Red Sea coast', p: 'Trucks queued at the gate and yard utilization was uneven.', s: 'Avox redesigned gate flow, set appointment slots, and reorganized yard stacking.', k: 'Appointment booking, yard layout, gate flow', w: '12 weeks', m: [['Truck turnaround', 95, 55, ' min'], ['Yard utilization', 62, 81, '%']] },
+      { t: 'Delivery success for an online fashion retailer', i: 'E-commerce', c: 'an online fashion retailer', p: 'Many first delivery attempts failed, raising costs and returns.', s: 'Avox introduced time-window selection, pre-delivery notifications, and route-level checks.', k: 'Time-window booking, notifications, route checks', w: '10 weeks', m: [['First-attempt delivery success', 71, 93, '%'], ['Returns caused by delivery issues', 9, 4, '%']] },
+      { t: 'Empty-mile reduction for a transport company', i: 'Transport', c: 'a Saudi road transport company', p: 'High empty running and uneven fleet utilization.', s: 'Avox matched backhaul loads and rebalanced fleet allocation by corridor.', k: 'Load matching, fleet utilization dashboard', w: '14 weeks', m: [['Empty running', 34, 18, '%'], ['Cost per km (index)', 100, 88, '']] },
+      { t: 'Order-to-ship speed for a pharmacy wholesaler', i: 'Lean management', c: 'a pharmacy wholesaler', p: 'Orders waited long in staging before dispatch.', s: 'Avox mapped the order flow, removed handoffs, and set pull-based dispatch.', k: 'Value stream mapping, pull dispatch', w: '9 weeks', m: [['Order-to-ship time', 36, 14, ' hrs'], ['Dock dwell time', 5, 2, ' hrs']] },
+      { t: 'Dead stock recovery for a building supplies retailer', i: 'Inventory', c: 'a building supplies retailer', p: 'Slow-moving items tied up cash and warehouse space.', s: 'Avox classified stock by movement, set liquidation rules, and reduced future buying.', k: 'Stock aging analysis, buying rules', w: '12 weeks', m: [['Excess stock value (index)', 100, 73, ''], ['Dead-stock SKUs', 420, 160, '']] },
+      { t: '5S and quality standards for a packaging plant', i: 'Lean management', c: 'a packaging company', p: 'Disorganized workstations and rising rework.', s: 'Avox ran 5S workshops, set visual standards, and introduced daily shift audits.', k: '5S audits, visual management, standard work', w: '10 weeks', m: [['5S audit score', 58, 89, '/100'], ['Rework rate', 6, 2, '%']] },
+      { t: 'Promotion replenishment for a supermarket chain', i: 'Retail', c: 'a Saudi supermarket chain', p: 'Promotional items ran out early in stores.', s: 'Avox set promotion forecasts per store and created pre-promotion stock plans.', k: 'Promotion forecasting, store stock plans', w: '8 weeks', m: [['Promo item out-of-stock rate', 22, 6, '%'], ['Promo waste', 9, 4, '%']] },
+      { t: 'Supplier performance for an electronics importer', i: 'Supply chain', c: 'a consumer electronics importer', p: 'Unreliable supplier deliveries and long lead times.', s: 'Avox created a supplier scorecard and agreed improvement plans with key suppliers.', k: 'Supplier scorecards, vendor reviews', w: '12 weeks', m: [['Supplier on-time delivery', 70, 90, '%'], ['Lead time variability (index)', 100, 65, '']] },
+      { t: 'Route density for a beverage distributor', i: 'Optimization', c: 'a beverage distributor', p: 'Too many trucks running partly loaded routes.', s: 'Avox redesigned delivery routes by density and adjusted drop windows.', k: 'Route optimization, drop-density analysis', w: '10 weeks', m: [['Kilometers per drop (index)', 100, 79, ''], ['Trucks used per day', 14, 11, '']] },
+      { t: 'Energy and space in a cold storage facility', i: 'Cold storage', c: 'a cold storage facility near Riyadh', p: 'High energy use per pallet and unused space.', s: 'Avox re-planned pallet zones and set door-open discipline with temperature targets.', k: 'Zone planning, energy KPIs', w: '16 weeks', m: [['Energy per pallet-day (index)', 100, 85, ''], ['Space utilization', 68, 86, '%']] },
+      { t: 'Rate management for a freight forwarder', i: 'Freight forwarding', c: 'a freight forwarder with regional lanes', p: 'Slow quotes and rates that were not reviewed regularly.', s: 'Avox built a rate library and a quote workflow with monthly rate reviews.', k: 'Rate library, quote workflow', w: '9 weeks', m: [['Quote turnaround', 48, 4, ' hrs'], ['Freight cost per container (index)', 100, 91, '']] },
+      { t: 'Gate speed for a container terminal yard', i: 'Container yard', c: 'a container yard in an industrial port area', p: 'Long gate transactions slowed truck flow.', s: 'Avox simplified gate paperwork and moved document checks ahead of arrival.', k: 'Pre-arrival documents, gate workflow', w: '8 weeks', m: [['Gate transaction time', 4.5, 2, ' min'], ['Gate queue incidents per week', 20, 6, '']] },
+      { t: 'Dock scheduling for a receiving warehouse', i: 'Warehouse', c: 'a receiving warehouse for a retail group', p: 'Trucks waited for dock doors and receiving errors were common.', s: 'Avox introduced dock appointments and a receiving checklist.', k: 'Dock scheduling, receiving checklist', w: '7 weeks', m: [['Dock wait time', 52, 20, ' min'], ['Receiving discrepancies', 8, 2, '%']] },
+      { t: 'Purchase cycle for a private hospital group', i: 'Procurement', c: 'a private hospital group', p: 'Long purchase cycles and high off-contract spend.', s: 'Avox redesigned requisition-to-PO steps and enforced catalog buying.', k: 'Procurement process map, catalog purchasing', w: '14 weeks', m: [['Purchase order cycle', 9, 4, ' days'], ['Off-contract spend', 31, 12, '%']] },
+      { t: 'Stock rebalancing across warehouses', i: 'Inventory', c: 'a building materials company with three warehouses', p: 'Stock sat in the wrong warehouse, causing long transfers.', s: 'Avox defined stocking rules by region and set transfer approval thresholds.', k: 'Stock allocation rules, transfer planning', w: '10 weeks', m: [['Stock in wrong warehouse', 24, 8, '%'], ['Emergency transfers per month', 30, 8, '']] },
+      { t: 'Network consolidation for an FMCG importer', i: 'Optimization', c: 'an FMCG importer with five warehouses', p: 'Duplicate costs and low utilization across sites.', s: 'Avox modeled the network and recommended consolidation to three sites.', k: 'Network modeling, cost-to-serve analysis', w: '20 weeks', m: [['Total logistics cost (index)', 100, 86, ''], ['Warehouses', 5, 3, '']] },
+      { t: 'Driver hours and on-time performance', i: 'Transport', c: 'a regional transport operator', p: 'High overtime and inconsistent on-time performance.', s: 'Avox rebuilt driver schedules within legal hours and balanced loads.', k: 'Scheduling tools, hours monitoring', w: '8 weeks', m: [['Overtime hours (index)', 100, 75, ''], ['On-time performance', 84, 93, '%']] },
+      { t: 'Returns handling for a retailer', i: 'Retail', c: 'a retailer with online and store returns', p: 'Slow returns processing and delayed refunds.', s: 'Avox designed a returns flow with inspection rules and restocking targets.', k: 'Returns process design, inspection rules', w: '9 weeks', m: [['Returns processing time', 10, 3, ' days'], ['Returns restocked within 7 days', 35, 80, '%']] },
+      { t: 'Temperature-compliant delivery for pharma', i: 'Pharma', c: 'a pharmaceutical last-mile provider', p: 'Some deliveries arrived outside temperature limits.', s: 'Avox added packaging checks, route timing rules, and delivery logging.', k: 'Packaging checks, delivery logs', w: '11 weeks', m: [['Temperature-compliant deliveries', 91, 99.5, '%'], ['Cost per delivery (index)', 100, 96, '']] },
+      { t: 'Cross-dock flow for a distributor', i: 'Lean management', c: 'a food distributor with a cross-dock', p: 'Pallets were handled multiple times before dispatch.', s: 'Avox redesigned the flow to reduce touches and standardized staging.', k: 'Process mapping, flow layout', w: '8 weeks', m: [['Touches per pallet', 4, 2, ''], ['Cross-dock time', 6, 2, ' hrs']] },
+      { t: 'Sales and operations planning for a consumer goods company', i: 'Supply chain', c: 'a consumer goods company', p: 'Sales, operations, and finance worked from different forecasts.', s: 'Avox set a monthly S&OP cycle with one agreed plan and clear owners.', k: 'S&OP process, plan dashboards', w: '16 weeks', m: [['Plan adherence', 60, 85, '%'], ['Forecast bias', 14, 4, '%']] },
+      { t: 'Failed delivery reduction for a grocery service', i: 'E-commerce', c: 'a grocery delivery service', p: 'Customers missed deliveries, causing repeat trips.', s: 'Avox introduced customer slot confirmations and adjusted driver assignments.', k: 'Slot confirmation, dispatch rules', w: '7 weeks', m: [['Failed deliveries', 14, 5, '%'], ['Repeat trips per day', 40, 15, '']] },
+      { t: 'Pick accuracy for a fulfillment center', i: 'Warehouse', c: 'a fulfillment center for a retail brand', p: 'Pick errors led to returns and customer complaints.', s: 'Avox introduced pick verification and error root-cause reviews.', k: 'Pick verification, root-cause analysis', w: '6 weeks', m: [['Pick accuracy', 99.1, 99.8, '%'], ['Pick errors per 1,000 lines', 9, 2, '']] },
+      { t: 'Customs clearance for an importer', i: 'Freight forwarding', c: 'an importer of industrial goods', p: 'Clearance delays caused port storage and demurrage charges.', s: 'Avox prepared a document pipeline and assigned clearance checkpoints.', k: 'Document pipeline, clearance tracker', w: '6 weeks', m: [['Clearance time', 5, 2, ' days'], ['Demurrage charges (index)', 100, 60, '']] },
+      { t: 'Inbound consolidation for an FMCG company', i: 'FMCG', c: 'an FMCG manufacturer', p: 'Many small inbound trucks with low loads.', s: 'Avox grouped inbound orders by supplier zone and set minimum load targets.', k: 'Inbound planning, load targets', w: '10 weeks', m: [['Inbound trucks per week', 60, 48, ''], ['Freight cost per pallet (index)', 100, 89, '']] }
+    ];
+
+    const grid = document.getElementById('grid');
+    const count = document.getElementById('count');
+    const empty = document.getElementById('empty');
+    const input = document.getElementById('q');
+
+    function bars(m) {
+      const max = Math.max(m[1], m[2]);
+      const w = v => Math.round((v / max) * 100);
+      return '<div class="metric"><div class="metric-label">' + m[0] + '</div>' +
+        '<div class="bar-row"><span>Before</span><div class="bar"><span style="width:' + w(m[1]) + '%"></span></div><span>' + m[1] + m[3] + '</span></div>' +
+        '<div class="bar-row"><span>After</span><div class="bar after"><span style="width:' + w(m[2]) + '%"></span></div><span>' + m[2] + m[3] + '</span></div></div>';
+    }
+
+    function card(c) {
+      return '<article class="card">' +
+        '<span class="badge">Illustrative scenario</span><span class="tag">' + c.i + '</span>' +
+        '<h3 style="margin-top:14px">' + c.t + '</h3>' +
+        '<p class="meta">Client: ' + c.c + ' &middot; Timeline: ' + c.w + '</p>' +
+        '<p><strong>Problem:</strong> ' + c.p + '</p>' +
+        '<p><strong>Avox solution:</strong> ' + c.s + '</p>' +
+        '<p class="meta"><strong>Tools:</strong> ' + c.k + '</p>' +
+        c.m.map(bars).join('') +
+        '<p class="case-note">Illustrative scenario. Figures are representative, not client-verified.</p>' +
+        '</article>';
+    }
+
+    function render() {
+      const q = input.value.trim().toLowerCase();
+      const list = CASES.filter(c => (c.t + ' ' + c.i + ' ' + c.c + ' ' + c.p + ' ' + c.s + ' ' + c.k).toLowerCase().includes(q));
+      grid.innerHTML = list.map(card).join('');
+      count.textContent = 'Showing ' + list.length + ' of ' + CASES.length + ' case studies';
+      empty.style.display = list.length ? 'none' : 'block';
+    }
+
+    input.addEventListener('input', render);
+    render();
+  </script>
+
+</body>
+</html>

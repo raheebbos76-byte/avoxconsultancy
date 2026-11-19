@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace https://www.example.com with your real domain before publishing. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.example.com/index.html</loc></url>
+  <url><loc>https://www.example.com/about.html</loc></url>
+  <url><loc>https://www.example.com/industries.html</loc></url>
+  <url><loc>https://www.example.com/case-studies.html</loc></url>
+  <url><loc>https://www.example.com/insights.html</loc></url>
+  <url><loc>https://www.example.com/glossary.html</loc></url>
+  <url><loc>https://www.example.com/tools.html</loc></url>
+  <url><loc>https://www.example.com/careers.html</loc></url>
+  <url><loc>https://www.example.com/video.html</loc></url>
+  <url><loc>https://www.example.com/legal.html</loc></url>
+</urlset>

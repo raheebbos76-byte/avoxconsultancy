@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Insights | Avox Consultancy</title>
+  <meta name="description" content="Practical articles from Avox Consultancy on inventory, last-mile delivery, S&amp;OP, and container yard operations.">
+  <link rel="icon" href="assets/avox-logo.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .article { padding: 32px; }
+    .article p { color: var(--ink); }
+    .read { font-size: 0.85rem; color: var(--muted); margin-bottom: 10px; }
+    .art-search { margin-top: 24px; max-width: 480px; }
+    .art-search input { padding: 14px; font-size: 1rem; }
+  </style>
+</head>
+<body id="top">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand"><img src="assets/avox-logo.svg" alt="Avox Consultancy" width="150" height="40"></a>
+      <nav aria-label="Main">
+        <a href="index.html#services">Services</a>
+        <a href="industries.html">Industries</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html" aria-current="page">Insights</a>
+        <a href="tools.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="index.html#contact" class="btn btn-small">Request a Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" style="padding-bottom:40px">
+      <div class="container">
+        <p class="eyebrow">Insights</p>
+        <h1>Practical thinking for busy operations teams</h1>
+        <p class="lead">Short, practical articles on the problems we see most often in Saudi logistics and supply chains.</p>
+        <div class="art-search">
+          <label for="q">Search articles</label>
+          <input id="q" type="search" placeholder="Search by topic" autocomplete="off">
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" style="padding-top:40px">
+      <div class="container">
+        <div class="cards three" id="articles">
+
+          <article class="card article" data-topic="inventory accuracy stock counts">
+            <p class="read">Inventory &middot; 5 min read</p>
+            <h3>Why inventory accuracy is the first fix</h3>
+            <p>Many supply chain projects begin with new software or new warehouse layouts. Yet if the system says you have 100 units and the shelf has 80, every later decision rests on bad numbers.</p>
+            <p>Start with cycle counting. Count your high-value items every week, your medium items every month, and your low-value items every quarter. Fix the causes of each mismatch before adding anything new.</p>
+          </article>
+
+          <article class="card article" data-topic="last-mile delivery cost failed deliveries">
+            <p class="read">Last-mile &middot; 4 min read</p>
+            <h3>Five signs your last-mile costs are too high</h3>
+            <p>Watch for repeat trips, failed first attempts, drivers returning with unused capacity, long gaps between drops, and cost per delivery rising faster than order volume.</p>
+            <p>Each sign has a practical fix, such as confirming time windows with customers, grouping drops by zone, and checking load plans before dispatch.</p>
+          </article>
+
+          <article class="card article" data-topic="S&amp;OP sales operations planning forecast">
+            <p class="read">Planning &middot; 6 min read</p>
+            <h3>How S&amp;OP brings sales, operations, and finance onto one plan</h3>
+            <p>When sales forecasts, operations capacity, and finance budgets come from different sources, every department works from a different plan. The result is stockouts in one month and excess stock in the next.</p>
+            <p>A monthly sales and operations planning cycle, with one agreed forecast and named owners, removes most of that friction.</p>
+          </article>
+
+          <article class="card article" data-topic="container yard gate congestion truck turnaround">
+            <p class="read">Container yards &middot; 5 min read</p>
+            <h3>Container yard congestion: where the time really goes</h3>
+            <p>Long truck waits rarely come from the yard itself. Most time is lost at the gate, in incomplete paperwork, and in searching for containers that were stacked in the wrong place.</p>
+            <p>Moving document checks ahead of arrival, booking appointment slots, and recording container positions as they move can cut turnaround time significantly.</p>
+          </article>
+
+        </div>
+        <p class="empty" id="empty" style="display:none;margin-top:24px">No articles match your search.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <img src="assets/avox-logo.svg" alt="Avox Consultancy">
+        <div>Avox Consultancy &middot; Based in Hungary</div>
+        <div>&copy; 2026 Avox Consultancy. All rights reserved.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#services">Services</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="tools.html">Tools</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="legal.html">Privacy and Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/966558089615" target="_blank" rel="noopener">WhatsApp us</a>
+
+  <script>
+    const q = document.getElementById('q');
+    const articles = document.querySelectorAll('#articles .article');
+    const empty = document.getElementById('empty');
+    q.addEventListener('input', function () {
+      const term = q.value.trim().toLowerCase();
+      let shown = 0;
+      articles.forEach(function (a) {
+        const text = (a.dataset.topic + ' ' + a.textContent).toLowerCase();
+        const match = text.includes(term);
+        a.style.display = match ? '' : 'none';
+        if (match) shown++;
+      });
+      empty.style.display = shown ? 'none' : 'block';
+    });
+  </script>
+
+</body>
+</html>

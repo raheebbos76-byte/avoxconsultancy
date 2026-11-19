@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free Supply Chain Tools | Avox Consultancy</title>
+  <meta name="description" content="Free tools from Avox Consultancy: warehouse capacity estimator, supply chain maturity check, reorder point calculator, and transport cost estimator.">
+  <link rel="icon" href="assets/avox-logo.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .tool { margin-bottom: 40px; }
+    .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px; }
+    .row { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+    .result { background: var(--bg); border-left: 3px solid var(--red); padding: 16px 20px; margin-top: 20px; border-radius: 4px; }
+    .result strong { color: var(--red); font-size: 1.2rem; }
+    .note { font-size: 0.85rem; color: var(--muted); margin-top: 12px; }
+    select { padding: 12px; font: inherit; border: 1px solid #cfc4b6; border-radius: 4px; width: 100%; }
+    @media (max-width: 800px) { .tool-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body id="top">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand"><img src="assets/avox-logo.svg" alt="Avox Consultancy" width="150" height="40"></a>
+      <nav aria-label="Main">
+        <a href="index.html#services">Services</a>
+        <a href="industries.html">Industries</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="tools.html" aria-current="page">Tools</a>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="index.html#contact" class="btn btn-small">Request a Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" style="padding-bottom:40px">
+      <div class="container">
+        <p class="eyebrow">Free tools</p>
+        <h1>Quick estimates for your operation</h1>
+        <p class="lead">Use these calculators to get a rough starting point. They are simplified estimates, not a substitute for a full diagnostic. For a detailed review, <a href="index.html#contact">request a consultation</a>.</p>
+      </div>
+    </section>
+
+    <!-- 1. Warehouse capacity -->
+    <section class="section alt" style="padding-top:40px">
+      <div class="container">
+        <div class="tool" id="capacity">
+          <h2>Warehouse capacity estimator</h2>
+          <p class="section-intro">Estimate how many standard pallets your warehouse can hold.</p>
+          <div class="tool-grid">
+            <div class="card">
+              <label for="area">Total floor area (m²)</label><input id="area" type="number" min="0" value="2000">
+              <label for="levels" style="margin-top:14px">Racking levels</label><input id="levels" type="number" min="1" value="4">
+              <label for="usable" style="margin-top:14px">Usable share after aisles and docks (%)</label><input id="usable" type="number" min="10" max="90" value="60">
+              <button class="btn" style="margin-top:18px" onclick="calcCapacity()">Calculate</button>
+            </div>
+            <div class="card">
+              <div class="result" id="capacity-result">Enter your figures and press Calculate.</div>
+              <p class="note">Assumes a standard pallet footprint of 1.2 m². Real capacity depends on racking design, product height, and safety rules.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Reorder point -->
+        <div class="tool" id="reorder">
+          <h2>Reorder point calculator</h2>
+          <p class="section-intro">Find the stock level at which you should place a new order.</p>
+          <div class="tool-grid">
+            <div class="card">
+              <label for="demand">Average daily demand (units)</label><input id="demand" type="number" min="0" value="50">
+              <label for="lead" style="margin-top:14px">Supplier lead time (days)</label><input id="lead" type="number" min="0" value="7">
+              <label for="safety" style="margin-top:14px">Safety stock (units)</label><input id="safety" type="number" min="0" value="60">
+              <button class="btn" style="margin-top:18px" onclick="calcReorder()">Calculate</button>
+            </div>
+            <div class="card">
+              <div class="result" id="reorder-result">Enter your figures and press Calculate.</div>
+              <p class="note">Reorder point = daily demand × lead time + safety stock.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Transport cost -->
+        <div class="tool" id="transport">
+          <h2>Transport cost estimator</h2>
+          <p class="section-intro">Estimate the monthly running cost of one delivery vehicle.</p>
+          <div class="tool-grid">
+            <div class="card">
+              <label for="trips">Trips per month</label><input id="trips" type="number" min="0" value="40">
+              <label for="km" style="margin-top:14px">Distance per trip (km)</label><input id="km" type="number" min="0" value="120">
+              <label for="fuel" style="margin-top:14px">Fuel price per litre (SAR)</label><input id="fuel" type="number" min="0" step="0.01" value="2.40">
+              <label for="kmpl" style="margin-top:14px">Fuel efficiency (km per litre)</label><input id="kmpl" type="number" min="1" value="8">
+              <label for="maint" style="margin-top:14px">Maintenance per km (SAR)</label><input id="maint" type="number" min="0" step="0.01" value="0.35">
+              <label for="driver" style="margin-top:14px">Driver cost per month (SAR)</label><input id="driver" type="number" min="0" value="5000">
+              <button class="btn" style="margin-top:18px" onclick="calcTransport()">Calculate</button>
+            </div>
+            <div class="card">
+              <div class="result" id="transport-result">Enter your figures and press Calculate.</div>
+              <p class="note">Excludes tolls, insurance, and vehicle depreciation. Driver cost is treated as a fixed monthly amount.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Maturity check -->
+        <div class="tool" id="maturity">
+          <h2>Supply chain maturity check</h2>
+          <p class="section-intro">Answer five questions to see where your operation stands today.</p>
+          <div class="card">
+            <div class="row"><span>Do you track stock accuracy weekly?</span>
+              <select id="m1"><option value="1">No</option><option value="2">Sometimes</option><option value="3">Yes, for key items</option><option value="4">Yes, for all items</option></select></div>
+            <div class="row"><span>How are orders planned?</span>
+              <select id="m2"><option value="1">Ad hoc</option><option value="2">Spreadsheets</option><option value="3">Monthly planning</option><option value="4">Integrated planning with sales and finance</option></select></div>
+            <div class="row"><span>How do you measure delivery performance?</span>
+              <select id="m3"><option value="1">We do not</option><option value="2">Occasionally</option><option value="3">Monthly report</option><option value="4">Live dashboard with targets</option></select></div>
+            <div class="row"><span>How well do your systems share data?</span>
+              <select id="m4"><option value="1">Separate, manual transfers</option><option value="2">Some links</option><option value="3">Mostly connected</option><option value="4">Fully connected</option></select></div>
+            <div class="row"><span>How do you improve processes?</span>
+              <select id="m5"><option value="1">Only when problems occur</option><option value="2">Ad hoc projects</option><option value="3">Regular reviews</option><option value="4">Structured continuous improvement</option></select></div>
+            <button class="btn" style="margin-top:18px" onclick="calcMaturity()">See my result</button>
+            <div class="result" id="maturity-result">Answer the questions and press "See my result."</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <img src="assets/avox-logo.svg" alt="Avox Consultancy">
+        <div>Avox Consultancy &middot; Based in Hungary</div>
+        <div>&copy; 2026 Avox Consultancy. All rights reserved.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#services">Services</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="tools.html">Tools</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="legal.html">Privacy and Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/966558089615" target="_blank" rel="noopener">WhatsApp us</a>
+
+  <script>
+    const v = id => parseFloat(document.getElementById(id).value) || 0;
+    const fmt = n => Math.round(n).toLocaleString('en-US');
+
+    function calcCapacity() {
+      const pallets = (v('area') * (v('usable') / 100) / 1.2) * v('levels');
+      document.getElementById('capacity-result').innerHTML =
+        'Estimated capacity: <strong>' + fmt(pallets) + ' pallets</strong>';
+    }
+
+    function calcReorder() {
+      const rop = v('demand') * v('lead') + v('safety');
+      document.getElementById('reorder-result').innerHTML =
+        'Reorder when stock falls to: <strong>' + fmt(rop) + ' units</strong>';
+    }
+
+    function calcTransport() {
+      const fuelPerTrip = (v('km') / v('kmpl')) * v('fuel');
+      const maintPerTrip = v('km') * v('maint');
+      const monthly = v('trips') * (fuelPerTrip + maintPerTrip) + v('driver');
+      const perTrip = v('trips') > 0 ? monthly / v('trips') : 0;
+      document.getElementById('transport-result').innerHTML =
+        'Monthly cost: <strong>' + fmt(monthly) + ' SAR</strong><br>Cost per trip: ' + fmt(perTrip) + ' SAR';
+    }
+
+    function calcMaturity() {
+      const total = ['m1', 'm2', 'm3', 'm4', 'm5'].reduce((s, id) => s + parseInt(document.getElementById(id).value, 10), 0);
+      let level, advice;
+      if (total <= 8) { level = 'Starting out'; advice = 'Focus first on stock accuracy and basic planning routines.'; }
+      else if (total <= 14) { level = 'Developing'; advice = 'Connect your systems and set regular performance reviews.'; }
+      else if (total <= 19) { level = 'Established'; advice = 'Move toward integrated planning and live performance dashboards.'; }
+      else { level = 'Advanced'; advice = 'Focus on continuous optimization and network-level decisions.'; }
+      document.getElementById('maturity-result').innerHTML =
+        'Maturity level: <strong>' + level + '</strong> (score ' + total + ' of 20)<br>' + advice;
+    }
+  </script>
+
+</body>
+</html>
