@@ -1,0 +1,151 @@
+:root {
+  --red: #A3262A;
+  --red-dark: #7E1D21;
+  --bg: #FBF8F4;
+  --ink: #2E2A27;
+  --muted: #6B625B;
+  --blue: #24476B;
+  --line: #E7DED3;
+  --white: #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+}
+h1, h2, h3 {
+  font-family: "IBM Plex Serif", Georgia, serif;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+h3 { font-size: 1.25rem; }
+a { color: var(--red); }
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 16px; background: #fff; padding: 8px; z-index: 30; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--line);
+}
+.nav-wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.brand img { height: 40px; width: auto; display: block; }
+nav { display: flex; gap: 22px; align-items: center; }
+nav a { color: var(--ink); text-decoration: none; font-size: 0.95rem; }
+nav a:hover { color: var(--red); }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--red); color: #fff;
+  padding: 12px 22px; border: 2px solid var(--red); border-radius: 4px;
+  text-decoration: none; font-weight: 500; cursor: pointer; font: inherit;
+}
+.btn:hover { background: var(--red-dark); border-color: var(--red-dark); color: #fff; }
+.btn-outline { background: transparent; color: var(--red); }
+.btn-outline:hover { background: var(--red); color: #fff; }
+.btn-small { padding: 8px 14px; font-size: 0.9rem; }
+
+/* Sections */
+.hero { background: var(--bg); padding: 88px 0 96px; border-bottom: 1px solid var(--line); }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+.eyebrow {
+  font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--blue); font-weight: 600; margin: 0 0 14px;
+}
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 36em; }
+.actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+.video-slot {
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, var(--blue), #16304b);
+  border-top: 4px solid var(--red); border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; text-align: center;
+}
+.section { padding: 88px 0; }
+.section.alt { background: var(--bg); }
+.section-intro { color: var(--muted); max-width: 40em; }
+
+/* Cards */
+.cards { display: grid; gap: 24px; margin-top: 40px; }
+.three { grid-template-columns: repeat(3, 1fr); }
+.four { grid-template-columns: repeat(4, 1fr); }
+.card {
+  background: #fff; border: 1px solid var(--line);
+  border-top: 3px solid var(--red); border-radius: 4px; padding: 28px;
+}
+.card p { color: var(--muted); margin: 0; }
+.num { font-family: "IBM Plex Serif", Georgia, serif; color: var(--red); font-weight: 600; }
+
+/* Case studies */
+.badge {
+  display: inline-block; background: #EEF3F8; color: var(--blue);
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 999px;
+}
+.meta { color: var(--muted); font-size: 0.9rem; margin: 10px 0 16px; }
+.metric { margin: 16px 0; }
+.metric-label { font-size: 0.9rem; font-weight: 500; margin-bottom: 4px; }
+.bar-row {
+  display: grid; grid-template-columns: 52px 1fr 64px; gap: 10px;
+  align-items: center; font-size: 0.85rem; margin: 6px 0;
+}
+.bar { height: 12px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.bar span { display: block; height: 100%; background: var(--blue); }
+.bar.after span { background: var(--red); }
+.case-note { font-size: 0.8rem; color: var(--muted); margin-top: 14px; font-style: italic; }
+
+/* Contact */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
+.contact-details { min-height: 220px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-grid .full { grid-column: 1 / -1; }
+label { display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 6px; }
+input, select, textarea {
+  width: 100%; padding: 12px; border: 1px solid #cfc4b6; border-radius: 4px;
+  font: inherit; background: #fff; color: var(--ink);
+}
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--blue); outline-offset: 1px; }
+textarea { min-height: 120px; resize: vertical; }
+.consent { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9rem; color: var(--muted); }
+.consent input { width: auto; margin-top: 4px; }
+.form-status { color: var(--blue); font-weight: 500; margin-top: 14px; min-height: 1.5em; }
+
+/* Footer and WhatsApp */
+.site-footer { background: var(--bg); border-top: 1px solid var(--line); padding: 48px 0; font-size: 0.9rem; color: var(--muted); }
+.footer-wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; }
+.footer-wrap img { height: 36px; width: auto; display: block; margin-bottom: 10px; }
+.footer-links a { color: var(--ink); text-decoration: none; margin-left: 18px; }
+.footer-links a:hover { color: var(--red); }
+.whatsapp {
+  position: fixed; right: 20px; bottom: 20px; z-index: 20;
+  background: var(--blue); color: #fff; padding: 12px 18px; border-radius: 999px;
+  text-decoration: none; font-weight: 500; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+.whatsapp:hover { background: #1b3857; color: #fff; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-grid, .contact-grid { grid-template-columns: 1fr; }
+  .three, .four { grid-template-columns: 1fr 1fr; }
+  nav a:not(.btn) { display: none; }
+}
+@media (max-width: 600px) {
+  .three, .four, .form-grid { grid-template-columns: 1fr; }
+  .section { padding: 64px 0; }
+  .hero { padding: 56px 0 64px; }
+}
+
+/* Icons */
+.ic { width: 36px; height: 36px; color: var(--red); display: block; margin-bottom: 14px; }
+.icon svg { width: 24px; height: 24px; }
